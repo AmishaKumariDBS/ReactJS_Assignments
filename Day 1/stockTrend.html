@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>STOCK TABLE</title>
+<style>
+table {
+    border-collapse: collapse;
+    border: 5px solid black;
+    width: 25%;
+}
+td {
+    width: 50%;
+    height: 2em;
+    border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+<table>
+    <tbody>
+        <tr><td>TICKET</td><td>PRICE</td></tr>
+        <tr><td>Wipro</td><td>256.65</td></tr>
+        <tr><td>Infy</td><td>994.76</td></tr>
+    </tbody>
+</table><br>
+<td style="height:90px"><b> STOCK TRENDING</b></td><br><br>
+<form id="f1">
+Ticket .
+<input size= "20" list = "Tickets  " name="Ticket">
+<datalist id="Ticket">
+<option value="Wipro">
+<option value="Infy">
+</datalist><br>
+<td style="height:50px"> Quantity<input type="number" name="stock" size="40" step="10"  max="100" > </td></form><br><br>
+<button type="submit" form ="f1" value="submit">Submit</button>
+</body>
+</html>
