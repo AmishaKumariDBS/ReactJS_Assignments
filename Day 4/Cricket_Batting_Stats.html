@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="cricket" width="250" height="250" style="border:4px solid #2714A8;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script style="color: grey">
+var a = document.getElementById("cricket");
+var cd = a.getContext("2d");
+cd.beginPath();
+cd.lineWidth = 4;
+cd.moveTo(0, 0);
+cd.lineTo(5, 40);
+cd.lineTo(10, 75);
+cd.lineTo(15, 140);
+cd.lineTo(20, 210);
+cd.stroke(); 
+</script>
+</body>
+</html>
