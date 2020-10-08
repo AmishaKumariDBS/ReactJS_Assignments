@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #410955;
+}
+
+h3{
+	color:#333;
+	text-align:center;
+} 
+
+li {
+  float: left;
+}
+
+.reg {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+.reg:hover{
+	opacity:1;
+}
+
+.pop {
+  display: none;
+  border: 3px solid #f1f1f1;
+  width: 400px;
+  padding: 10px;
+  background-color: white;
+  text-align: center
+		
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+ 
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #800080;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  cursor:wait;
+}
+
+.dropdown-content a:hover {background-color: gray;
+text-decoration: underline;
+}
+a:active {color: red;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.inp {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.txt {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background:white;
+  text-align:left;
+
+}
+
+.but {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #800080;
+  size=50px;
+}
+
+</style>
+
+<script>
+
+
+function dt(d1, d2) {
+ 
+                const d1 = new Date(d1);
+                const d2 = new Date(d2);
+                const diff =(d2.getTime()-d1.getTime());
+
+            if( diff < 0){
+                 document.write("Kindly enter valid dates");
+            }else{
+                document.write(diff/(1000*3600*24) + " days");
+            }
+}
+		
+
+function register() {
+  document.getElementById("newUser").style.display = "block";
+  var dy1=document.getElementById("i1").value;
+  var dy2=document.getElementById("i2").value;
+  var obj = new dt(dy1,dy2)
+  }
+</script>
+
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">About Us</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Assignment</a>
+    <div class="dropdown-content">
+      <a href="#">Stock</a>
+      <a href="#">Xena Event</a>
+      <a href="#">Video Player</a>
+    </div>
+  </li>
+</ul>
+
+<h3>To calculate age difference <button onclick="register()">Click Here</button></h3>
+
+
+
+
+<div class="pop" id="newUser">
+
+  <form>
+    <table class="pos">
+	<tr class="txt">DATE1</tr>
+	<tr><tb><input class="inp" type="date" placeholder="Enter the date" name="nm" id="i1" required></tb></tr>    
+    <tr class="txt">DATE2</tr>
+    <input class="inp" type="date" placeholder="Enter the date" name="email" id="i2" required>
+   	<tr><tb>
+    <button type="submit" class="but"><b>Calculate</b></button>
+    </tb></tr>
+  </form>
+
+</div>
+
+
+</body>
+</html>
