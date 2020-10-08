@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<div style="background:white;width:300px;height:200px;justify-content:center;align-items:center; opacity:0.5;"></div>-->
+
+	<title></title>
+
+	<style type="text/css">
+		.posn{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 10px 10px 5px #888888;
+			height: 300px;
+			width: 350px;
+
+		}
+		table:hover{
+			background-color: white;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		var myObj=openDatabase("MyDatabase","1.0","Event Registration Details",2*1024*1024,onSuccess());
+		myObj.transaction(function(tx){
+				tx.executeSql('CREATE TABLE IF NOT EXISTS Xena(name,age,email,city,date)')
+				alert("Welcome")
+		})
+		
+		function insertRecord(){
+			var name=document.getElementById("name").value;
+			var age=document.getElementById("age").value;
+			var email=document.getElementById("email").value;
+			var city=document.getElementById("city").value;
+			var date=document.getElementById("date").value;
+				myObj.transaction(function(tx){
+					tx.executeSql('insert into Xena(name,age,email,city,date) values(?,?,?,?,?)',[name, age, email, city, date]);
+				<!--"'+name+'",'+age+',"'+email+'","'+city+'",'+date+'-->
+					alert("data inserted")
+				})
+		}
+		function onSuccess(){
+			alert("Database is created")
+		}
+
+	</script>
+</head>
+<body background="xena_img.jpg">
+
+<fielsset>
+<legend  style="color:brown; font-size:50px; margin: 0 auto; text-align:center; text-shadow: 5px 5px 5px brown;">Xena Softwares</legend>
+<form>
+<table class="posn"style="background-color:white; opacity:0.5;"cellspacing="3" celllpading="3">
+		<tr><td>                          </td></tr>
+		<tr><td>NAME</td><td><input type="text" pattern="[a-zA-Z]" name="name" value=""></td></tr>
+        <tr><td>AGE</td><td><input type="number" min="18" name="age" value=""></td></tr>
+        <tr><td>EMAIL</td><td><input type="email" name="email" value=""></td></tr>
+        <tr><td>
+        CITY</td><td>
+        <input list="city" name="city">
+<datalist id="city">
+  <option value="Chandigarh">
+  <option value="Jaipur">
+  <option value="Delhi">
+  <option value="Mohali">
+  <option value="Jalandhar">
+</datalist>
+
+        </td></tr>
+        <tr><td>DATE</td><td><input type="date" name="date" min="2017-28-02" max="2017-03-04"> </td></tr>
+        <tr><td><input style="background:brown;"type="button" name="" value="Book Slot" onclick="insertRecord()"></td></tr>
+        <tr><td>                         </td></tr>
+</table>
+</form>
+</fieldset>
+	
+
+</body>
+</html>
