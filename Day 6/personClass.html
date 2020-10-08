@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function Person(name,address,dob){
+			this.name=name;
+			this.address=address;
+			this.dob=dob;
+			this.getName=function(){
+				return this.name;
+			}
+			this.getAddress=function(){
+				return this.address;
+			}
+			this.getDob=function(){
+				return this.dob;
+			}
+		}
+		var coll=new Array();
+		function save(){	
+			var name=document.getElementById('txt1').value;
+			var address=document.getElementById('txt2').value;
+			var dob=document.getElementById('txt3').value;
+			var obj=new Person(name,address,dob)
+			coll.push(obj)
+		}
+		function display(){
+			str="<table border='5px'>"
+			for(i=0;i<coll.length;i++){
+				str+="<tr> <td>"+coll[i].getName()+"</td> <td>"+coll[i].getAddress()+"</td> <td>"+coll[i].getDob()+"</td></tr>"
+			}
+			str+='</table>'
+			document.getElementById('d1').innerHTML=str;
+		}
+		function calAge(){
+                var today = new Date();
+                var bday = new Date(document.getElementById("txt3").value);
+                x = parseInt((today - bday) / (24 * 3600 * 1000));
+                alert(" The number of days between the two dates is " + Math.floor(x));
+                alert(" The number of years between the two dates is " + Math.floor(x/365));
+        }
+	</script>
+</head>
+<body><table>
+	<tr><td style="color: #1564AD; font-size:24px">Enter  Name</td><td> <input type="text" name="" id="txt1"> </td><br><br></tr>
+	<tr><td style="color: #1564AD; font-size:24px">Enter  Address</td><td> <input type="text" name="" id="txt2"></td> <br><br></tr>
+	<tr><td style="color: #1564AD; font-size:24px">Enter  DOB</td><td> <input type="date" name="" id="txt3"> </td><br><br></tr>
+	<input style="bos-shadow: 5px 6px 0px 0px #1564AD; border-radius: 5px; background-color: #79BBFF; color: white; display: inline-block; padding: 7px 24px" type="button" name="" onclick="save()" value="Accept Details"> <br><br>
+    <input style="bos-shadow: 5px 6px 0px 0px #1564AD; border-radius: 5px; background-color: #79BBFF; color: white; display: inline-block; padding: 7px 24px" type="button" name="" onclick="calAge()" value="Calculate Age" id="dob"> <br><br>
+    <input style="bos-shadow: 5px 6px 0px 0px #1564AD; border-radius: 5px; background-color: #79BBFF; color: white; display: inline-block; padding: 7px 24px" type="button" name="" onclick="display()" value="Display"> <br><br>
+	<div id="d1"></div>
+	</table>
+</body>
+</html>
