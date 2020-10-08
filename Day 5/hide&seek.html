@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: mymove  ;
+  animation-play-state: paused;
+   animation-duration: 3s;  
+  animation-fill-mode: both;
+  
+}
+@keyframes mymove {
+  from {left: 100px;  background-color: white;}
+  to {left: 500px;  background-color: white;}
+}
+</style>
+</head>
+<body style="background-color:#E6A8A8;">
+<script>
+function start() {
+  document.getElementById("Play").style.animationPlayState = "running";
+}
+</script>
+<div id="play">
+<button style="border-radius: 28px; background-color:#9E4444; color: white" onclick="start()">Play</button>
+</div>
+</body>
+</html>
