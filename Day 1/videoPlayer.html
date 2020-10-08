@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>video</title>
+</head>
+<body>
+	<center>
+		<div>
+			<img style="display:inline;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAUbOwtsdOfh5rRR7k3p6Yp5SW9j_W29aXVw&usqp=CAU" alt="React" width="50" height="50"/>
+			<h1 style="display:inline;">NATFLIX (better than Netflix)</h1>
+		</div>
+		<video id="video" width="600" height="400">
+  <source src="video.mp4" type="video/mp4">
+  </video>
+		<button style="color: green" onclick="play()" type="button">Play</button>
+		<button style="color: green" onclick="pause()" type="button">Pause</button>
+	</center>
+</body>
+</html>
+<script>
+	var a=document.getElementById("video");
+	function play(){
+		a.play();
+	}
+	function pause(){
+		a.pause();
+	}
+</script>
