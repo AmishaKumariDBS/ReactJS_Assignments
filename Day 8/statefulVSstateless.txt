@@ -1,0 +1,41 @@
+//STATELESS
+var Header = React.createClass({
+    render: function() {
+        return(
+            <img src={'Image.png'} />
+        );
+    }
+});
+
+const FunctionalComponent = () => {
+  return "stateless function 2";
+}
+
+
+//STATEFUL
+class stateful1 extends React.Component {
+  render() {
+   return "I'm the class component";
+  }
+}
+
+import React, {Component} from 'react'
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      names: []
+    }
+  }
+  render() {
+    return (
+      <div>
+        
+          {this.state.names.map(name => {
+            return <li><img src={name} /></li>
+          })}
+      
+      </div>
+    )
+  }
+}
