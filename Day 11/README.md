@@ -1,6 +1,7 @@
 ## DEPLOYED ON HEROKU
 
  [Click on this link](new-app-trial.herokuapp.com)
+ ### NOTE: Without Back-end, the html pages cannot be deployed on Heroku
 
   ### OUTPUT
   
